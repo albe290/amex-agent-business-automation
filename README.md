@@ -26,6 +26,8 @@ This AI agent mitigates these problems by bringing the cost-per-decision down to
 
 **Estimated Business Impact:** Translates to potentially **millions of dollars saved annually** through combined fraud loss prevention and a drastic reduction in manual operational overhead.
 
+![Amex ROI Dashboard](assets/roi_dashboard.png)
+
 ---
 
 ## 🏗️ Architecture & Core Components
