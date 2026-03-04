@@ -27,6 +27,27 @@ htmlcov/
 *.swp
 *.swo
 
+# Source Code & Data (Hiding from GitHub)
+/api/
+/config/
+/financial_agent_core/
+/monitoring/
+/rag/
+/runner/
+/tests/
+/tools/
+/validators/
+/workflows/
+/venv/
+/__pycache__/
+/.pytest_cache/
+/showcase.py
+/run_dev.py
+/test_*.txt
+/*.log
+/*.json
+/sentinel-runtime/
+
 # OS files
 .DS_Store
 Thumbs.db

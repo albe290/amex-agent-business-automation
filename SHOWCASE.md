@@ -1,11 +1,4 @@
-# Secure Financial AI Agent: Execution Showcase
-
 This document provides simulated terminal "screenshots" (logs) of our Agent Orchestrator resolving real-world financial intents against the **Sentinel Runtime Risk Engine** and our **Internal Validator Schemas**. 
-
-You can run these locally by executing:
-```bash
-python showcase.py
-```
 
 ---
 

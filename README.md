@@ -102,42 +102,12 @@ Demonstrating how the agent "learns" relevant financial policies by ingesting ma
 
 ---
 
-## 🛠️ Installation & Usage
+---
 
-1. **Clone the repository:**
-   ```bash
-   git clone <YOUR_GITHUB_REPOSITORY_URL>
-   cd amex-agent-business-automation
-   ```
+## 🏛️ Proprietary Architecture Notice
+The source code for this repository is part of a proprietary internal system and is currently vaulted to protect Intellectual Property (IP). This repository serves as a **Documentation & Architecture Showcase** to demonstrate the high-level logic, security governance, and multi-layered safety of the agentic workforce. 
 
-2. **Set up the virtual environment:**
-   ```bash
-   python -m venv venv
-   source venv/Scripts/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt  # (Ensure you generate a requirements.txt if you haven't)
-   # Or install testing tools:
-   pip install pytest
-   ```
-
-### Running Tests
-The project features a comprehensive test suite that validates the agent's behavior, RAG retrieval, and the Sentinel runtime's ability to block unsafe actions.
-
-```bash
-pytest
-```
-
-To run a specific test suite (e.g., concrete execution and sentinel integration):
-```bash
-pytest tests/test_concrete_execution.py -v
-```
-
-![Concrete Execution Tests](assets/test_concrete_execution.png)
-
-![Safety Test Results](assets/safety_tests_2.png)
+For inquiries regarding the technical implementation, underlying logic, or professional security consulting, please contact the repository owner.
 
 ---
 
