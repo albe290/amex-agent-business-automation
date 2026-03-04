@@ -75,7 +75,11 @@ graph TD
 
 ### 🖼️ Visual Demonstration
 
-To see the agent in action, we have provided a [Detailed Showcase](SHOWCASE.md). Below are the "Money Shots" of our safe automation system:
+### 🎥 Live Video Demonstration
+Check out the full walkthrough of the Amex Agent in action: 
+**[Watch the Live Demo Recording](https://1drv.ms/v/c/656ad0e98a3b6fab/IQBEezzZOPX3RIW8fCLyI_wwAQKfjAcJW7n5AtJCiLczB94?e=8kBjLY)**
+
+To see the agent in action via text logs, we have also provided a [Detailed Showcase](SHOWCASE.md). Below are the "Money Shots" of our safe automation system:
 
 ### 1. The Autonomous Orchestrator (Live Demo)
 This screenshot shows the agent processing a fraud triage request, retrieving policy context via RAG, and generating a reasoning plan before execution.
