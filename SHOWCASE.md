@@ -49,4 +49,4 @@ The system retrieves 100% accurate policy context by embedding internal Amex gui
 ---
 
 ### Verification Suite: 100% Safety Compliance
-![Safety Test Suite](assets/safety_tests.png)
+![RAG Ingestion and Verification](assets/safety_tests_2.png)
