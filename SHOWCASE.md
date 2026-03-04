@@ -1,4 +1,4 @@
-# Amex Agent Business Automation: Execution Showcase
+# Secure Financial AI Agent: Execution Showcase
 
 This document provides simulated terminal "screenshots" (logs) of our Agent Orchestrator resolving real-world financial intents against the **Sentinel Runtime Risk Engine** and our **Internal Validator Schemas**. 
 
@@ -10,7 +10,7 @@ python showcase.py
 ---
 
 ### Policy Intelligence Layer (RAG)
-The system retrieves 100% accurate policy context by embedding internal Amex guidelines into a vector store.
+The system retrieves 100% accurate policy context by embedding professional financial guidelines into a vector store.
 ![RAG Policy Ingestion](assets/rag_ingestion.png)
 
 ---

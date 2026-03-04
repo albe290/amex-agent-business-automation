@@ -1,14 +1,14 @@
-# amex-agent-business-automation
-"The Amex Agent Business Automation project is a secure, policy-driven AI runtime. It integrates with the Sentinel risk engine to evaluate and govern agent actions (like account freezes) using RAG-retrieved policies. It features deterministic workflows and safety validators to ensure safe, context-aware execution of business automations."
+# secure-financial-ai-agent
+"The Secure Financial AI Agent is a robust, policy-driven AI runtime inspired by enterprise financial systems like American Express. It integrates with the Sentinel risk engine to evaluate and govern agent actions (like account freezes) using RAG-retrieved policies. It features deterministic workflows and safety validators to ensure safe, context-aware execution of financial automations."
 
-# Amex Agent Business Automation 🚀
+# Secure Financial AI Agent 🚀
 
 [![Status: Completed](https://img.shields.io/badge/Status-Completed-success)](#)
 [![Python version](https://img.shields.io/badge/python-3.10%2B-blue)](#)
 [![Business Focus](https://img.shields.io/badge/ROI-High-gold)](#)
 
 ## 📌 Executive Summary
-The **Amex Agent Business Automation** project is a secure, policy-driven AI runtime designed to automate highly critical, volume-heavy operational processes like fraud triage and credit underwriting. 
+The **Secure Financial AI Agent** is a policy-driven AI runtime designed to automate highly critical, volume-heavy operational processes like fraud triage and credit underwriting. 
 
 By integrating deterministic workflows with LLM decision-making, policy retrieval (RAG), and a strict safety validator (Sentinel), this system acts as a **Level 1 autonomous agent** capable of making rapid, compliant decisions at scale.
 
@@ -26,7 +26,7 @@ This AI agent mitigates these problems by bringing the cost-per-decision down to
 
 **Estimated Business Impact:** Translates to potentially **millions of dollars saved annually** through combined fraud loss prevention and a drastic reduction in manual operational overhead.
 
-![Amex ROI Dashboard](assets/roi_dashboard.png)
+![Financial ROI Dashboard](assets/roi_dashboard.png)
 
 ---
 
@@ -76,7 +76,7 @@ graph TD
 ### 🖼️ Visual Demonstration
 
 ### 🎥 Live Video Demonstration
-Check out the full walkthrough of the Amex Agent in action: 
+Check out the full walkthrough of the Financial AI Agent in action: 
 **[Watch the Live Demo Recording](https://1drv.ms/v/c/656ad0e98a3b6fab/IQBEezzZOPX3RIW8fCLyI_wwAQKfjAcJW7n5AtJCiLczB94?e=8kBjLY)**
 
 To see the agent in action via text logs, we have also provided a [Detailed Showcase](SHOWCASE.md). Below are the "Money Shots" of our safe automation system:
@@ -97,7 +97,7 @@ Validating the "Trust but Verify" model with our automated test suite.
 ![Safety Test Results](assets/safety_tests_2.png)
 
 ### 5. Policy Intelligence (RAG Ingestion)
-Demonstrating how the agent "learns" Amex policies by ingesting markdown documents into a high-speed vector store.
+Demonstrating how the agent "learns" relevant financial policies by ingesting markdown documents into a high-speed vector store.
 ![RAG Ingestion Placeholder](assets/rag_ingestion.png)
 
 ---
