@@ -73,7 +73,25 @@ graph TD
 - Python 3.10+
 - An OpenAI API Key (or equivalent LLM provider, depending on configuration)
 
-### Installation
+### 🖼️ Visual Demonstration
+
+To see the agent in action, we have provided a [Detailed Showcase](SHOWCASE.md). Below are the "Money Shots" of our safe automation system:
+
+### 1. The Autonomous Orchestrator (Live Demo)
+This screenshot shows the agent processing a fraud triage request, retrieving policy context via RAG, and generating a reasoning plan before execution.
+![Live Demo Placeholder](assets/demo_execution.png)
+
+### 2. 100% Safety Compliance (Unit Tests)
+Validating the "Trust but Verify" model. This shows our 10+ core safety and compliance tests passing, ensuring every edge case is governed.
+![Testing Placeholder](assets/safety_tests.png)
+
+### 3. Policy Intelligence (RAG Ingestion)
+Demonstrating how the agent "learns" Amex policies by ingesting markdown documents into a high-speed vector store.
+![RAG Ingestion Placeholder](assets/rag_ingestion.png)
+
+---
+
+## 🛠️ Installation & Usage
 
 1. **Clone the repository:**
    ```bash
