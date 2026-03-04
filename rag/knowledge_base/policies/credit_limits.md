@@ -1,11 +1,11 @@
 # Credit Limit Increase Guidelines
 
 ## Underwriting Rules
-American Express maintains high standards for automatic credit limit approvals.
+Our financial institution maintains high standards for automatic credit limit approvals to ensure platform stability.
 
 ## Approval Thresholds
-- **Tier 1 (Centurion/VIP)**: Automatic approvals allowed up to $50,000 for accounts in good standing (Credit Score > 720).
-- **Tier 2 (Standard/Corporate)**: Automatic approvals allowed up to $10,000. Any request exceeding this requires manual underwriting (`REVIEW`).
+- **Tier 1 (Centurion/VIP)**: Manual review is required for all high-value limit adjustments. 
+- **Tier 2 (Standard/Corporate)**: Automatic approvals are restricted to low-risk profiles. Any request exceeding platform safety thresholds requires manual underwriting (`REVIEW`).
 - **New Accounts**: Accounts less than 6 months old are ineligible for automatic limit increases.
 
 ## Risk Factors
@@ -13,4 +13,4 @@ American Express maintains high standards for automatic credit limit approvals.
 - High balance utilization (>80%) triggers a `REVIEW` rather than an `ALLOW`.
 
 ## Agent Instructions
-When a customer requests a credit increase, always verify their account status and current balance before issuing an `ALLOW` decision.
+When a customer requests a credit increase, always verify their account status and current balance before issuing a decision. High-value requests (> $100k) are strictly blocked for human triage.
