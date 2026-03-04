@@ -30,6 +30,33 @@ This AI agent mitigates these problems by bringing the cost-per-decision down to
 
 ## 🏗️ Architecture & Core Components
 
+```mermaid
+graph TD
+    User([Customer or Employee]) --> API[FastAPI Entry Point]
+    API --> Orchestrator[Agent Orchestrator]
+    
+    subgraph "Phase 4: Intelligence Layer"
+        Orchestrator --> Retriever[RAG Retriever]
+        Retriever --> VectorDB[(Vector Store JSON)]
+        Orchestrator --> Planner[Reasoning Planner]
+    end
+    
+    subgraph "Phase 1: Safety Layer"
+        Orchestrator --> Schema[Schema Validator]
+        Orchestrator --> Financial[Financial Rule Engine]
+        Orchestrator --> Compliance[Compliance Validator]
+    end
+    
+    subgraph "Phase 3: Risk Evaluation"
+        Orchestrator --> Sentinel[Sentinel Runtime Risk Engine]
+    end
+    
+    Orchestrator --> Decision{Decision Handler}
+    Decision -- ALLOW --> Workflow[Concrete Workflow Execution]
+    Decision -- BLOCK --> Fail[Audit Log / Fail]
+    Decision -- REVIEW --> Escalation[Human Review Ticket]
+```
+
 1. **Stateful Workflows (`workflows/`)**: Deterministic state machines (e.g., `FraudTriageWorkflow`) that guide the LLM through a strict sequence: Intent Validation -> Context Retrieval -> Risk Evaluation -> Execution.
 2. **Policy Retrieval (RAG) (`rag/`)**: Dynamically loads real-time compliance policies and rules to inform the agent's context.
 3. **Sentinel Risk Engine (`runner/sentinel_client.py`)**: A dedicated safety layer that scores the risk of the agent's intended action (e.g., `freeze_account`) and issues hard `ALLOW`, `REVIEW`, or `BLOCK` verdicts.
