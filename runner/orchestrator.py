@@ -10,6 +10,7 @@ from validators.financial_rules import check_financial_rules
 from validators.compliance_validator import check_compliance_constraints
 from rag.retriever import PolicyRetriever
 from financial_agent_core.planner import DecisionPlanner, format_plan_for_prompt
+from runner.sentinel_client import SentinelClient
 
 
 class AgentOrchestrator:
@@ -21,6 +22,7 @@ class AgentOrchestrator:
     def __init__(self):
         self.retriever = PolicyRetriever()
         self.planner = DecisionPlanner()
+        self.sentinel = SentinelClient()
         self.workflows = {
             "fraud_triage": FraudTriageWorkflow,
             "credit_underwriting": CreditUnderwritingWorkflow,
@@ -64,7 +66,23 @@ class AgentOrchestrator:
         if not is_compliant:
             return self._fail("compliance_violation", comp_msg)
 
-        # 4. Route to Stateful Workflow
+        # 4. AI SECURITY GATEWAY (Industry Gold Standard)
+        # Crossing the boundary to the external Sentinel Runtime Risk Engine
+        print(f"[Orchestrator] Requesting Security Clearance from Sentinel Gateway...")
+        sentinel_decision = self.sentinel.evaluate(action, context)
+
+        if sentinel_decision == "BLOCK":
+            return self._fail(
+                "sentinel_block",
+                "Action blocked by Sentinel Security Gateway (Risk Score out of bounds).",
+            )
+        elif sentinel_decision == "REVIEW":
+            # In a real system, we might pause here. For automation, we track it.
+            print(
+                f"[Orchestrator] [WARNING] Sentinel issued REVIEW verdict. Proceeding with manual escalation log."
+            )
+
+        # 5. Route to Stateful Workflow
         workflow_class = self.workflows.get(workflow_name)
         if not workflow_class:
             return self._fail("routing_error", f"Unknown workflow: {workflow_name}")
