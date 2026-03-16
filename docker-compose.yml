@@ -1,0 +1,77 @@
+version: "3.9"
+
+# Governed Agentic AI Platform — Local Development Stack
+# Usage: docker compose up --build
+
+services:
+
+  # ─────────────────────────────────────────────────────────────
+  # API Service: FastAPI — handles intake, control plane, telemetry
+  # ─────────────────────────────────────────────────────────────
+  api:
+    build:
+      context: .
+      dockerfile: infra/docker/api.Dockerfile
+    container_name: amex-platform-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      - QUEUE_MODE=memory
+      - STORAGE_MODE=memory
+      - FEATURE_LIVE_AGENTS=false
+    volumes:
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────────────────────
+  # Worker Service: Async event consumer — governed pipeline
+  # ─────────────────────────────────────────────────────────────
+  worker:
+    build:
+      context: .
+      dockerfile: infra/docker/worker.Dockerfile
+    container_name: amex-platform-worker
+    env_file:
+      - .env
+    environment:
+      - QUEUE_MODE=memory
+      - STORAGE_MODE=memory
+      - FEATURE_LIVE_AGENTS=false
+      - CONSUMER_POLL_INTERVAL_MS=250
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ─────────────────────────────────────────────────────────────
+  # Dashboard Service: React observability console
+  # ─────────────────────────────────────────────────────────────
+  dashboard:
+    build:
+      context: .
+      dockerfile: infra/docker/dashboard.Dockerfile
+    container_name: amex-platform-dashboard
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  logs:
+    driver: local
+
+networks:
+  default:
+    name: amex-platform-network

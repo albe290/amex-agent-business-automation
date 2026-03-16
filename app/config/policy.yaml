@@ -1,0 +1,42 @@
+# Policy-Driven AI Governance Configuration
+# Central Source of Truth for Financial Guardrails
+
+global_limits:
+  max_transaction_amount: 100000.0  # Amounts >= this trigger universal block/review
+  default_risk_score: 2  # Starting low risk score (100 - 98 compliance)
+
+risk_thresholds:
+  allow: 30
+  review: 60
+  block: 85  # Scores >= 60 but < 85 are REVIEW, >= 85 are hard BLOCK
+
+account_risk:
+  acc_864: 88  # delinquent account
+  acc_135: 35  # moderate risk account
+  acc_vip: 2   # centurion VIP
+
+ai_signals_penalty:
+  exfiltration: 50
+  severe risk: 40
+  deny: 30
+  freeze: 30
+
+actions:
+  freeze_account:
+    base_risk: 15
+    restricted_account_types:
+      - "Centurion"
+      - "VIP"
+    required_actor_level: "employee"
+  
+  approve_high_risk:
+    base_risk: 85
+    required_actor_level: "employee"
+  
+  unlock_account:
+    base_risk: 10
+    required_actor_level: "admin"
+
+security:
+  enforce_strict_mfa: true
+  data_sensitivity_default: "internal"
